@@ -2,6 +2,7 @@ import {
   faCoffee,
   faHome,
   faHouseUser,
+  faHashtag,
 } from "@fortawesome/free-solid-svg-icons";
 
 const links = [
@@ -15,8 +16,8 @@ const links = [
   {
     text: "Explore",
     id: "Explore",
-    default_icon: faCoffee,
-    active_icon: faCoffee,
+    default_icon: faHashtag,
+    active_icon: faHashtag,
     url: "/explore",
   },
   {

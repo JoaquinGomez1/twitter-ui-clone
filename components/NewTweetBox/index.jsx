@@ -11,7 +11,7 @@ export default function index() {
           className="mx-2 p-2 bg-transparent resize-none w-full focus:outline-none text-gray-200"
         />
         <div className="border-t border-gray-100 border-opacity-20 " />
-        <div className="flex justify-between my-4">
+        <div className="flex justify-between mt-2">
           <div className="flex-grow"></div>
           <button className="px-4 py-2 bg-green-400 rounded-full text-white font-bold text-sm focus:outline-none">
             Tweet

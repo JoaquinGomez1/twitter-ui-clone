@@ -2,6 +2,7 @@ import {
   faRetweet,
   faHeart,
   faCommentAlt,
+  faShare,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -37,6 +38,9 @@ export default function index(tweet) {
           </div>
           <div>
             <FontAwesomeIcon className="w-4 h-4 text-gray-500" icon={faHeart} />
+          </div>
+          <div>
+            <FontAwesomeIcon className="w-4 h-4 text-gray-500" icon={faShare} />
           </div>
         </div>
       </div>
