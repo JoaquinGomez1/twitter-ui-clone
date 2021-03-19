@@ -16,7 +16,7 @@ export default function CustomLink({ link, isActive }) {
         />
       </div>
 
-      <h1 className="text-lg font-bold">{link.text}</h1>
+      <h1 className="text-lg font-bold hidden lg:block">{link.text}</h1>
     </div>
   );
 }

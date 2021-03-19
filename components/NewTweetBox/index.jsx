@@ -2,7 +2,12 @@ export default function index() {
   return (
     <div className="flex p-4 py-3 border-l border-r border-b border-opacity-20 border-gray-100">
       <div>
-        <div className="p-6 rounded-full bg-white"></div>
+        <div className="h-11 w-11 object-fit overflow-hidden rounded-full bg-white">
+          <img
+            src="https://pbs.twimg.com/profile_images/1363165940276469766/1T2F4Cza_400x400.jpg"
+            alt=""
+          ></img>
+        </div>
       </div>
       <div className="flex-grow">
         <textarea

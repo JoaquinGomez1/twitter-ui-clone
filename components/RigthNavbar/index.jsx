@@ -31,7 +31,7 @@ const news = [
 
 export default function index() {
   return (
-    <div className="flex flex-col w-72 py-1 text-gray-200 ">
+    <div className="hidden lg:flex flex-col w-72 py-1 text-gray-200 ">
       <div className="flex items-center justify-between rounded-full px-4 py-2 bg-gray-700">
         <FontAwesomeIcon className="w-6 h-6 opacity-40" icon={faSearch} />
         <TextInput type="text" className="bg-transparent ml-2 text-gray-400" />
@@ -58,7 +58,7 @@ export default function index() {
             </div>
           </div>
         ))}
-        <p className="p-4 text-green-400 text-sm hover:bg-gray-700 cursor-pointer rounded-b-3xl hover:text-green-300">
+        <p className="p-4 text-green-400 text-sm hover:bg-gray-700 cursor-pointer rounded-b-3xl hover:text-green-300 select-none">
           Show more
         </p>
       </div>
