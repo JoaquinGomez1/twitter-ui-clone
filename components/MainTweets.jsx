@@ -1,24 +1,25 @@
 import NewTweetBox from "./NewTweetBox";
 import TweetBoxHeader from "./TweetBoxHeader";
 import Tweet from "./Tweet";
-import constants from "../constants";
-const { tweets } = constants;
 import formatAsTweet from "../libs/formatAsTweet";
+import LoadingSpinner from "./LoadingSpinner";
 
 export default function MainTweets(props) {
-  console.log(props.tweets);
   return (
-    <div
-      className="flex flex-grow flex-col px-4 max-w-xl ml-16 lg:ml-52"
-      {...props}
-    >
+    <div className="md:w-">
       <TweetBoxHeader />
       <NewTweetBox />
-      <div className="">
-        {tweets.map((tweet) => {
-          const formatedTweet = formatAsTweet(tweet);
-          return <Tweet tweet={formatedTweet} />;
-        })}
+      <div>
+        {!props.tweets.length ? (
+          <LoadingSpinner />
+        ) : (
+          props.tweets.map((tweet) => {
+            const formatedTweet = formatAsTweet(tweet);
+            return (
+              <Tweet key={formatedTweet.author_id} tweet={formatedTweet} />
+            );
+          })
+        )}
       </div>
     </div>
   );

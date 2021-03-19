@@ -1,25 +1,30 @@
+import { useState, useEffect } from "react";
 import Container from "../components/Container";
-import LeftNavbar from "../components/LeftNavbar";
 import MainTweets from "../components/MainTweets";
-import RightNavbar from "../components/RigthNavbar";
-import fetch from "isomorphic-unfetch";
 
-export default function Home({ tweets }) {
+export default function Home() {
+  const [tweets, setTweets] = useState([]);
+  useEffect(() => {
+    handleFetch();
+  }, []);
+
+  const handleFetch = async () => {
+    let fetchAllowed = true;
+    if (fetchAllowed) {
+      const maxResults = 12;
+      const URL = `https://randomuser.me/api/?results=${maxResults}`;
+      const req = await fetch(URL);
+      const res = await req.json();
+
+      setTweets(res.results);
+    }
+    return () => {
+      fetchAllowed = false;
+    };
+  };
   return (
-    <div className=" bg-gray-800 relative pb-12 ">
-      <Container className="flex relative">
-        <LeftNavbar />
-        <MainTweets tweets={tweets} />
-        <RightNavbar />
-      </Container>
-    </div>
+    <Container className="flex relative">
+      <MainTweets tweets={tweets} />
+    </Container>
   );
-}
-
-export async function getServerSideProps(ctx) {
-  const URL = "https://randomuser.me/api/?results=8";
-  const req = await fetch(URL);
-  const res = await req.json();
-
-  return { props: { tweets: res } };
 }

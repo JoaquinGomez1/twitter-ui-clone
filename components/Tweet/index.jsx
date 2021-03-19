@@ -7,21 +7,39 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function index(tweet) {
-  const { author_name, author_tag, content, date, avatar } = tweet.tweet;
+  const {
+    author_name,
+    author_tag,
+    content,
+    date,
+    images: { large, thumbnail },
+  } = tweet.tweet;
   return (
     <div className="flex p-4 border border-gray-100 border-opacity-20">
-      <div className="rounded-full h-6 bg-white p-6 ">
-        <div></div>
+      <div className="rounded-full h-9 w-10 bg-white overflow-hidden ">
+        <img
+          className="object-fit my-auto"
+          src={large || thumbnail}
+          alt={"profile pic"}
+        />
       </div>
       <div className="flex flex-col px-4 w-full">
         <div className="flex items-center">
-          <p className="text-white font-bold text-sm mr-2">{author_name}</p>
-          <p className="text-gray-400 text-opacity-70">@{author_tag} .</p>
+          <div className="flex flex-col xs:flex-row items-center  ">
+            <p className="text-white font-bold text-sm mr-2 flex-wrap">
+              {author_name}
+            </p>
+            <p className="text-gray-400 text-opacity-70">@{author_tag} .</p>
+          </div>
           <p>{date}</p>
         </div>
 
         <div className="flex flex-grow text-gray-200">
-          <p>{content}</p>
+          <p className="flex-wrap">
+            {content ||
+              `Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Animi, ipsum.`}
+          </p>
         </div>
         <div className="flex justify-between mt-2">
           <div>

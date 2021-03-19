@@ -1,27 +1,32 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-import TextInput from "../TextInput";
+import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+
+import SearchBar from "../SearchBar";
 
 const news = [
   {
+    id: 23,
     content: "Lorem, ipsum dolor",
     tweets: 2103,
     trendingLocation: "Argentina",
     field: "politics",
   },
   {
+    id: 24,
     content: "Lorem, ipsum dolor",
     tweets: 2103,
     trendingLocation: "Argentina",
     field: "politics",
   },
   {
+    id: 25,
     content: "Lorem, ipsum dolor",
     tweets: 2103,
     trendingLocation: "Argentina",
     field: "politics",
   },
   {
+    id: 26,
     content: "Lorem, ipsum dolor",
     tweets: 2103,
     trendingLocation: "Argentina",
@@ -31,16 +36,14 @@ const news = [
 
 export default function index() {
   return (
-    <div className="hidden lg:flex flex-col w-72 py-1 text-gray-200 ">
-      <div className="flex items-center justify-between rounded-full px-4 py-2 bg-gray-700">
-        <FontAwesomeIcon className="w-6 h-6 opacity-40" icon={faSearch} />
-        <TextInput type="text" className="bg-transparent ml-2 text-gray-400" />
-      </div>
+    <div className="hidden md:flex flex-col w-72 z-50 py-1 text-gray-200 absolute right-10 top-0 ">
+      <SearchBar />
 
       <div className="rounded-2xl my-4 bg-gray-900 bg-opacity-10">
         <h2 className="text-2xl text-white px-4 py-4">What's Happening</h2>
         {news.map((trending, index) => (
           <div
+            key={trending.id}
             className={
               "flex flex-col w-full border-t border-gray-100 border-opacity-20 px-4 py-2 " +
               (index + 1 === news.length ? "border-b" : "")
