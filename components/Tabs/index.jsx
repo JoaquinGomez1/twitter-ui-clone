@@ -6,7 +6,12 @@ export default function index(props) {
 
   return (
     <div>
-      <div {...props} className={"flex items-center " + props.className}>
+      <div
+        {...props}
+        className={
+          "flex items-center overflow-x-auto w-full " + props.className
+        }
+      >
         {tabs.map((each, index) => (
           <h3
             key={each.props.name + index}

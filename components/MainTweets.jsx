@@ -6,7 +6,7 @@ import LoadingSpinner from "./LoadingSpinner";
 
 export default function MainTweets(props) {
   return (
-    <div className="md:w-">
+    <div>
       <TweetBoxHeader />
       <NewTweetBox />
       <div>

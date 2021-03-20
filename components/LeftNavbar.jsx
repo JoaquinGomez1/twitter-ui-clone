@@ -9,7 +9,7 @@ export default function LeftNavbar() {
   const currentLink = router.pathname;
 
   return (
-    <div className="sm:flex flex-col hidden lg:w-48 text-gray-200 py-2 fixed z-50 ">
+    <div className="flex flex-col lg:w-48 text-gray-200 py-2 fixed z-50 ">
       <TwitterSvg />
       {links.map((link) => {
         const isActive = currentLink === link.url;

@@ -9,9 +9,9 @@ export default function explore() {
         <Searchbar />
       </div>
 
-      <Tabs className="mt-4">
+      <Tabs className="mt-4 px-0">
         <ExploreTweets name="epxlore1" />
-        <ExploreTweets />
+        <ExploreTweets name="explore2" />
         <ExploreTweets name="epxlore3" />
         <ExploreTweets name="epxlore4" />
       </Tabs>

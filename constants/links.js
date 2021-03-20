@@ -1,5 +1,4 @@
 import {
-  faCoffee,
   faHome,
   faHouseUser,
   faHashtag,

@@ -8,7 +8,7 @@ module.exports = {
       animation: { "spin-fast": "spin .75s linear infinite" },
     },
     screens: {
-      xs: "475px",
+      xs: "350px",
       ...defaultTheme.screens,
     },
   },
