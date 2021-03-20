@@ -15,7 +15,7 @@ export default function index(tweet) {
     images: { large, thumbnail },
   } = tweet.tweet;
   return (
-    <div className="flex p-4 border border-gray-100 border-opacity-20">
+    <div className="flex px-4 py-2 border border-gray-100 border-opacity-20">
       <div className="xs:h-1/6 md:h-11 xs:w-1/3 sm:w-12 bg-red-400 overflow-hidden mt-1 rounded-full ">
         <img
           className="my-auto h-full w-full object-fit"
@@ -43,7 +43,7 @@ export default function index(tweet) {
             elit. Animi, ipsum.`}
           </p>
         </div>
-        <div className="flex justify-between mt-2">
+        <div className="flex justify-between mt-3">
           <div>
             <FontAwesomeIcon
               className="w-4 h-4 text-gray-500"

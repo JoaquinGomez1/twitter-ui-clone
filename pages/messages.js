@@ -1,7 +1,5 @@
+import WorkInProgress from "../components/WorkInProgress";
+
 export default function messages() {
-  return (
-    <div>
-      <h2>Messages</h2>
-    </div>
-  );
+  return <WorkInProgress />;
 }

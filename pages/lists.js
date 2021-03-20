@@ -1,3 +1,5 @@
+import WorkInProgress from "../components/WorkInProgress";
+
 export default function lists() {
-  return <div>Lists</div>;
+  return <WorkInProgress />;
 }

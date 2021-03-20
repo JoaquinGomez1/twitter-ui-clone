@@ -1,7 +1,5 @@
+import WorkInProgress from "../components/WorkInProgress";
+
 export default function more() {
-  return (
-    <div>
-      <h2>Under construction</h2>
-    </div>
-  );
+  return <WorkInProgress />;
 }

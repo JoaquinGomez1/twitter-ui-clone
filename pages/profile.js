@@ -1,7 +1,5 @@
+import WorkInProgress from "../components/WorkInProgress";
+
 export default function profile() {
-  return (
-    <div>
-      <h2>Profile</h2>
-    </div>
-  );
+  return <WorkInProgress />;
 }
