@@ -14,7 +14,9 @@ export default function MainTweets(props) {
           <LoadingSpinner />
         ) : (
           props.tweets.map((tweet) => {
-            const formatedTweet = formatAsTweet(tweet);
+            const formatedTweet = tweet.originalContent
+              ? tweet
+              : formatAsTweet(tweet);
             return (
               <Tweet key={formatedTweet.author_id} tweet={formatedTweet} />
             );

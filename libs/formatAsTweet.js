@@ -1,6 +1,17 @@
 // Returns a 'tweet' like object
 
 export default function formatAsTweet(object) {
+  const objectFields = [
+    "author_id",
+    "images",
+    "author_tag",
+    "author_name",
+    "comments",
+    "likes",
+    "retweets",
+    "content",
+  ];
+
   return {
     author_id: `${object.id.value}${Math.random()}`,
     images: {
@@ -9,8 +20,8 @@ export default function formatAsTweet(object) {
     },
     author_tag: object.login?.username,
     author_name: `${object.name?.first}_${object.name?.last}`,
-    comments: Math.floor(Math.random()),
-    likes: Math.floor(Math.random()),
-    retweets: Math.floor(Math.random()),
+    comments: Math.floor(Math.random() * 100),
+    likes: Math.floor(Math.random() * 100),
+    retweets: Math.floor(Math.random() * 100),
   };
 }
