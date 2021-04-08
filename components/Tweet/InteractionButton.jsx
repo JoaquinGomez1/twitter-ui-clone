@@ -8,7 +8,6 @@ export default function InteractionButton({
   textClassName = "",
   ...rest
 }) {
-  console.log("p-4 rounded-full bg-green-400 text-gray-500 " + iconClassName);
   return (
     <div
       className={"flex items-center space-x-2 " + containerClassName}

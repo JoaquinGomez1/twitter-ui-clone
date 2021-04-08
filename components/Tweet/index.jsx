@@ -4,7 +4,6 @@ import {
   faCommentAlt,
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import InteractionButton from "./InteractionButton";
 
 export default function index(tweet) {
@@ -19,9 +18,32 @@ export default function index(tweet) {
     images: { large, thumbnail },
   } = tweet.tweet;
 
+  const tweetActions = [
+    {
+      icon: faCommentAlt,
+      count: comments,
+      className: "hover:text-blue-400 hover:bg-blue-400",
+    },
+    {
+      icon: faRetweet,
+      count: retweets,
+      className: "hover:text-green-400 hover:bg-green-400",
+    },
+    {
+      icon: faHeart,
+      count: likes,
+      className: "hover:text-pink-600 hover:bg-pink-600",
+    },
+    {
+      icon: faShare,
+      count: undefined,
+      className: "hover:text-blue-400 hover:bg-blue-400",
+    },
+  ];
+
   return (
     <div className="flex px-4 py-2 border border-gray-100 border-opacity-20">
-      <div className="xs:h-1/6 md:h-11 xs:w-1/3 sm:w-12 bg-red-400 overflow-hidden mt-1 rounded-full ">
+      <div className="xs:h-1/6 sm:h-11 xs:w-1/6 sm:w-12 bg-red-400 overflow-hidden mt-1 rounded-full ">
         <img
           className="my-auto h-full w-full object-fit"
           src={large || thumbnail}
@@ -49,25 +71,13 @@ export default function index(tweet) {
           </p>
         </div>
         <div className="flex justify-between mt-3">
-          <InteractionButton
-            icon={faCommentAlt}
-            count={comments}
-            iconClassName={"hover:text-blue-400 hover:bg-blue-400"}
-          />
-          <InteractionButton
-            icon={faRetweet}
-            count={retweets}
-            iconClassName={"hover:text-green-400 hover:bg-green-400"}
-          />
-          <InteractionButton
-            icon={faHeart}
-            count={likes}
-            iconClassName={"hover:text-pink-600 hover:bg-pink-600"}
-          />
-          <InteractionButton
-            icon={faShare}
-            iconClassName={"hover:text-blue-400 hover:bg-blue-400"}
-          />
+          {tweetActions.map((each) => (
+            <InteractionButton
+              icon={each.icon}
+              count={each.count}
+              iconClassName={each.className}
+            />
+          ))}
         </div>
       </div>
     </div>
