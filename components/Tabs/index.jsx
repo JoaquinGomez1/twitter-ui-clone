@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 export default function index(props) {
   const childrenTabs = React.Children.toArray(props.children);
   const [current, setCurrent] = useState(0);
@@ -21,7 +22,7 @@ export default function index(props) {
             }
             onClick={() => setCurrent(index)}
           >
-            {each.props.name || "PlzAddNameProp"}
+            {each.props.name || "PlsAddNameProp"}
           </h3>
         ))}
       </div>

@@ -8,7 +8,7 @@ export default function index() {
   const pageName = pathname?.substring(1, pathname.length); // removes the '/' at the beginning of the string
   return (
     <div className="py-2 h-screen">
-      <div className="relative object-fit w-full h-60">
+      <div className="relative object-fit w-96 h-60">
         <div className="bg-gradient-to-t from-gray-900 to-gray-800 w-full h-full absolute bottom-0 left-0 z-20" />
         <div className="bottom-10 z-40 left-4 absolute">
           <h2 className="text-gray-500 font-bold text-xl capitalize">
