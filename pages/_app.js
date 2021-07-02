@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TweetsContext>
-        <div className=" bg-gray-800 relative pb-12 min-h-screen text-white ">
+        <div className=" bg-gray-800 relative min-h-screen text-white">
           <Container>
             <LeftNavbar />
             <PageViewContainer>
