@@ -6,6 +6,7 @@ export default function index() {
   const router = useRouter();
   const { pathname } = router;
   const pageName = pathname?.substring(1, pathname.length); // removes the '/' at the beginning of the string
+
   return (
     <div className="py-2 h-screen">
       <div className="relative object-fit w-full h-60">

@@ -9,19 +9,16 @@ export default function InteractionButton({
   ...rest
 }) {
   return (
-    <div
-      className={"flex items-center space-x-2 " + containerClassName}
-      {...rest}
-    >
+    <div className={"flex items-center " + containerClassName} {...rest}>
       <div
         className={
           "items-center cursor-pointer justify-center rounded-full text-gray-500 p-2 hover:bg-opacity-10 " +
           iconClassName
         }
       >
-        <FontAwesomeIcon className={"h-4 w-4"} icon={icon} />
+        <FontAwesomeIcon className={"h-3 w-3 sm:h-4 sm:w-4"} icon={icon} />
       </div>
-      <p className={"text-gray-500 " + textClassName}>{count}</p>
+      <p className={"text-gray-500 text-sm " + textClassName}>{count}</p>
     </div>
   );
 }

@@ -43,7 +43,7 @@ export default function index(tweet) {
 
   return (
     <div className="flex px-4 py-2 border border-gray-100 border-opacity-20">
-      <div className="xs:h-1/6 sm:h-11 xs:w-1/6 sm:w-12 bg-red-400 overflow-hidden mt-1 rounded-full ">
+      <div className="w-9 h-8 sm:h-11 sm:w-12  bg-red-400 overflow-hidden mt-1 rounded-full ">
         <img
           className="my-auto h-full w-full object-fit"
           src={large || thumbnail}
