@@ -17,8 +17,9 @@ export default function index(props) {
           <h3
             key={each.props.name + index}
             className={
-              "py-2 px-3 text-sm hover:bg-green-600 cursor-pointer  text-center  w-full block hover:bg-opacity-10 text-gray-200 hover:text-green-400 " +
-              (current === index && " text-green-400 border-b border-green-400")
+              "py-2 px-3 text-sm w-full hover:bg-green-600 cursor-pointer text-center block hover:bg-opacity-10 text-gray-200 hover:text-green-400 " +
+              (current === index &&
+                " text-green-400 border-b-2 font-bold border-green-400")
             }
             onClick={() => setCurrent(index)}
           >

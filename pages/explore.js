@@ -10,7 +10,7 @@ const images = [
 
 export default function explore() {
   return (
-    <div className="px-3 border-l border-r border-gray-100 border-opacity-20">
+    <div className=" border-l border-r w-full border-gray-100 border-opacity-20">
       <div className="py-1">
         <Searchbar />
       </div>
