@@ -4,9 +4,14 @@ import {
   faCommentAlt,
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
+import { ITweet } from "../../constants/types";
 import InteractionButton from "./InteractionButton";
 
-export default function index(tweet) {
+interface ITweetProps {
+  tweet: ITweet;
+}
+
+export default function index(tweet: ITweetProps) {
   const {
     author_name,
     author_tag,
@@ -42,7 +47,7 @@ export default function index(tweet) {
   ];
 
   return (
-    <div className="flex px-4 py-2 border border-gray-100 border-opacity-20">
+    <div className="flex px-4 py-2 border border-gray-100 border-opacity-20 bg-gray-800">
       <div className="w-9 h-8 sm:h-11 sm:w-12  bg-red-400 overflow-hidden mt-1 rounded-full ">
         <img
           className="my-auto h-full w-full object-fit"

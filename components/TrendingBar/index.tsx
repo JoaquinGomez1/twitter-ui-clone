@@ -1,7 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+import { ITrending } from "../../constants/types";
 
-export default function index({ className, trending, ...rest }) {
+interface ITrendingBarProps {
+  className?: string;
+  trending: ITrending;
+}
+
+export default function index({
+  className,
+  trending,
+  ...rest
+}: ITrendingBarProps) {
   return (
     <div
       {...rest}

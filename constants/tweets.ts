@@ -1,4 +1,6 @@
-const tweets = [
+import { ITweet } from "./types";
+
+const tweets: ITweet[] = [
   {
     author_name: "Juanceto",
     author_tag: "juan",

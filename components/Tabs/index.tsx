@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { ReactChildren, useState } from "react";
 
-export default function index(props) {
-  const childrenTabs = React.Children.toArray(props.children);
+interface ITabsProps {
+  children: ReactChildren;
+  className?: string;
+  name: string;
+}
+
+export default function index(props: ITabsProps) {
+  const childrenTabs = React.Children.toArray(props.children).map(
+    (child) => React.isValidElement(child) && React.cloneElement(child)
+  );
   const [current, setCurrent] = useState(0);
   const [tabs] = useState(childrenTabs);
 

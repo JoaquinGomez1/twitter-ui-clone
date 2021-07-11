@@ -9,8 +9,9 @@ import {
   faUser,
   faEllipsisH,
 } from "@fortawesome/free-solid-svg-icons";
+import { ILink } from "./types";
 
-const links = [
+const links: ILink[] = [
   {
     text: "Home",
     id: "Home",

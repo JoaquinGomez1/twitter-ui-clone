@@ -3,17 +3,18 @@ import TweetBoxHeader from "./TweetBoxHeader";
 import Tweet from "./Tweet";
 import formatAsTweet from "../libs/formatAsTweet";
 import LoadingSpinner from "./LoadingSpinner";
+import { faMeteor } from "@fortawesome/free-solid-svg-icons";
 
 export default function MainTweets(props) {
   if (!props.tweets.length) return <LoadingSpinner />;
 
   return (
     <div>
-      <TweetBoxHeader />
+      <TweetBoxHeader icon={faMeteor} content="Home" />
       <div className=" bg-gray-800">
         <NewTweetBox />
       </div>
-      <div>
+      <div className="w-full">
         {props?.tweets?.map((tweet) => {
           const formatedTweet = tweet.originalContent
             ? tweet

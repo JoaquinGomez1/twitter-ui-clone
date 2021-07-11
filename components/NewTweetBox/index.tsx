@@ -41,7 +41,6 @@ export default function index() {
         <textarea
           onChange={handleChange}
           value={inputValue}
-          type="text"
           placeholder="What's happening"
           className="mx-2 p-2 bg-transparent resize-none w-full focus:outline-none text-gray-200"
         />

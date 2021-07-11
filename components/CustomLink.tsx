@@ -1,7 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { ILink } from "../constants/types";
 
-export default function CustomLink({ link, isActive }) {
+interface ICustomLinkProps {
+  link: ILink;
+  isActive: boolean;
+}
+
+export default function CustomLink({ link, isActive }: ICustomLinkProps) {
   return (
     <Link href={link.url}>
       <a>

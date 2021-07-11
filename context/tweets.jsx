@@ -1,8 +1,8 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
 export const TweetsContext = createContext();
 
-export default function tweets(props) {
+export default function TweetsProvider(props) {
   const [tweets, setTweets] = useState([]);
   const [tweetsLoading, setTweetsLoading] = useState(false);
 
@@ -16,4 +16,13 @@ export default function tweets(props) {
       {...props}
     />
   );
+}
+
+export function useTweets() {
+  if (!TweetsContext)
+    return console.error("Use this inside a tweet context provider");
+  const { tweets, setTweets, tweetsLoading, setTweetsLoading } =
+    useContext(TweetsContext);
+
+  return { tweets, setTweets, tweetsLoading, setTweetsLoading };
 }

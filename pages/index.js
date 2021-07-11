@@ -1,10 +1,9 @@
-import { useEffect, useContext } from "react";
-import Container from "../components/Container";
-import MainTweets from "../components/MainTweets";
+import { useEffect } from "react";
+import MainTweets from "../components/MainTweets.tsx";
 
-import { TweetsContext } from "../context/tweets";
+import { useTweets } from "../context/tweets";
 export default function Home() {
-  const { tweets, setTweets, setTweetsLoading } = useContext(TweetsContext);
+  const { tweets, setTweets, setTweetsLoading } = useTweets();
   useEffect(() => {
     handleFetch();
   }, []);
@@ -27,8 +26,8 @@ export default function Home() {
   };
 
   return (
-    <div className="flex relative">
+    <>
       <MainTweets tweets={tweets} />
-    </div>
+    </>
   );
 }

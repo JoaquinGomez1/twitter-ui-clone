@@ -1,4 +1,13 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+interface InteractionButtonProps {
+  icon: IconProp;
+  count: string | number;
+  iconClassName?: string;
+  containerClassName?: string;
+  textClassName?: string;
+}
 
 export default function InteractionButton({
   icon,
@@ -7,7 +16,7 @@ export default function InteractionButton({
   containerClassName = "",
   textClassName = "",
   ...rest
-}) {
+}: InteractionButtonProps) {
   return (
     <div className={"flex items-center " + containerClassName} {...rest}>
       <div

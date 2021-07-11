@@ -15,7 +15,7 @@ export default function explore() {
         <Searchbar />
       </div>
 
-      <Tabs className="mt-4 px-0">
+      <Tabs className="mt-4">
         <ExploreTweets name="epxlore1" />
         <ExploreTweets name="explore2" image={images[0]} />
         <ExploreTweets name="epxlore3" image={images[1]} />

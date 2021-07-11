@@ -1,4 +1,6 @@
-const news = [
+import { ITrending } from "./types";
+
+const news: ITrending[] = [
   {
     id: 23,
     content: "Lorem, ipsum dolor",

@@ -1,6 +1,13 @@
 import { faHeart, faRetweet } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import defaultImages from "../../constants/defaultImages";
+import { ITweet } from "../../constants/types";
+
+interface INotificationBoxProps {
+  authors: ITweet[];
+  actionName: string;
+  content: string;
+}
 
 const actionsIcons = {
   like: {
@@ -15,7 +22,11 @@ const actionsIcons = {
   },
 };
 
-export default function index({ authors, actionName, content }) {
+export default function index({
+  authors,
+  actionName,
+  content,
+}: INotificationBoxProps) {
   const action = actionsIcons[actionName];
   return (
     <div className="w-full flex  border-b border-gray-600 p-4 hover:bg-gray-700 cursor-pointer">
@@ -32,7 +43,7 @@ export default function index({ authors, actionName, content }) {
         <div className="flex items-center space-x-1">
           {authors.map((author) => (
             <img
-              src={author?.avatar || defaultImages.thumbnail}
+              src={author?.avatar || defaultImages?.thumbnail}
               className="rounded-full w-8 h-9"
             />
           ))}
