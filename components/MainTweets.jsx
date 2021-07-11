@@ -9,8 +9,8 @@ export default function MainTweets(props) {
 
   return (
     <div>
-      <div className="sticky top-0 bg-gray-800">
-        <TweetBoxHeader />
+      <TweetBoxHeader />
+      <div className=" bg-gray-800">
         <NewTweetBox />
       </div>
       <div>

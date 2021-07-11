@@ -11,6 +11,7 @@ module.exports = {
       xs: "350px",
       ...defaultTheme.screens,
     },
+    fontSize: { md: "0.950rem" },
   },
   variants: {
     extend: {},

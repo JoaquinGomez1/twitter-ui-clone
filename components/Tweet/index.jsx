@@ -64,7 +64,7 @@ export default function index(tweet) {
         </div>
 
         <div className="flex flex-grow text-gray-200">
-          <p className="flex-wrap leading-4">
+          <p className="flex-wrap leading-4 text-md">
             {content ||
               `Lorem ipsum dolor sit amet consectetur adipisicing
             elit. Animi, ipsum.`}

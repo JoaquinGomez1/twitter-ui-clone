@@ -27,8 +27,8 @@ export default function Home() {
   };
 
   return (
-    <Container className="flex relative">
+    <div className="flex relative">
       <MainTweets tweets={tweets} />
-    </Container>
+    </div>
   );
 }
