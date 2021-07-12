@@ -25,9 +25,5 @@ export default function Home() {
     };
   };
 
-  return (
-    <>
-      <MainTweets tweets={tweets} />
-    </>
-  );
+  return <MainTweets tweets={tweets} />;
 }

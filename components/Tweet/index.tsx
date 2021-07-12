@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { ITweet } from "../../constants/types";
 import InteractionButton from "./InteractionButton";
+import Avatar from "../Avatar";
 
 interface ITweetProps {
   tweet: ITweet;
@@ -48,13 +49,7 @@ export default function index(tweet: ITweetProps) {
 
   return (
     <div className="flex px-4 py-2 border border-gray-100 border-opacity-20 bg-gray-800">
-      <div className="w-9 h-8 sm:h-11 sm:w-12  bg-red-400 overflow-hidden mt-1 rounded-full ">
-        <img
-          className="my-auto h-full w-full object-fit"
-          src={large || thumbnail}
-          alt={"profile pic"}
-        />
-      </div>
+      <Avatar src={large || thumbnail} />
       <div className="flex flex-col px-4 w-full">
         <div className="flex items-center">
           <div className="flex flex-col sm:flex-row sm:items-center  ">

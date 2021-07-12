@@ -36,3 +36,9 @@ export interface ILink {
   text: string;
   id: string | number;
 }
+
+export interface IMessage extends IUser {
+  id?: string | number;
+  date: string;
+  content: string;
+}
