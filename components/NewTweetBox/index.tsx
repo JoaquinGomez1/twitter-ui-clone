@@ -7,7 +7,7 @@ export default function index() {
   const [inputValue, setInputValue] = useState("");
   const maxCharacters = 120;
 
-  const handleChange = ({ target }) => {
+  const handleChange = ({ target }: any) => {
     setInputValue(target.value.substring(0, maxCharacters));
   };
 
