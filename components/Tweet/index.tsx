@@ -21,7 +21,7 @@ export default function index(tweet: ITweetProps) {
     likes,
     comments,
     retweets,
-    images: { large, thumbnail },
+    images,
   } = tweet.tweet;
 
   const tweetActions = [
@@ -49,7 +49,7 @@ export default function index(tweet: ITweetProps) {
 
   return (
     <div className="flex px-4 py-2 border border-gray-100 border-opacity-20 bg-gray-800">
-      <Avatar src={large || thumbnail} />
+      <Avatar src={images?.large! || images?.thumbnail!} />
       <div className="flex flex-col px-4 w-full">
         <div className="flex items-center">
           <div className="flex flex-col sm:flex-row sm:items-center  ">
@@ -74,7 +74,7 @@ export default function index(tweet: ITweetProps) {
           {tweetActions.map((each) => (
             <InteractionButton
               icon={each.icon}
-              count={each.count}
+              count={each.count!}
               iconClassName={each.className}
             />
           ))}
