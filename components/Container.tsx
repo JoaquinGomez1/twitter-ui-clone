@@ -5,7 +5,11 @@ interface IContainerProps {
   className?: string;
 }
 
-export default function Container({ children, className, ...rest }) {
+export default function Container({
+  children,
+  className,
+  ...rest
+}: IContainerProps) {
   return (
     <div
       className={

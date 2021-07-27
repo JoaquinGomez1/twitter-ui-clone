@@ -1,4 +1,4 @@
-export default function index(props) {
+export default function index(props: any) {
   return (
     <input
       {...props}

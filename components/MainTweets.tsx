@@ -5,7 +5,7 @@ import formatAsTweet from "../libs/formatAsTweet";
 import LoadingSpinner from "./LoadingSpinner";
 import { faMeteor } from "@fortawesome/free-solid-svg-icons";
 
-export default function MainTweets(props) {
+export default function MainTweets(props: any) {
   if (!props.tweets.length) return <LoadingSpinner />;
 
   return (
@@ -15,7 +15,7 @@ export default function MainTweets(props) {
         <NewTweetBox />
       </div>
       <div className="w-full">
-        {props?.tweets?.map((tweet) => {
+        {props?.tweets?.map((tweet: any) => {
           const formatedTweet = tweet.originalContent
             ? tweet
             : formatAsTweet(tweet);

@@ -5,7 +5,7 @@ import { ITweet } from "../../constants/types";
 
 interface INotificationBoxProps {
   authors: ITweet[];
-  actionName: string;
+  actionName: "like" | "retweet";
   content: string;
 }
 

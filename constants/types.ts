@@ -1,6 +1,7 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export interface ITweet extends IUser {
+  author_id?: string | number;
   content: string;
   date?: Date | string;
   likes: number;
@@ -35,4 +36,10 @@ export interface ILink {
   default_icon: IconProp;
   text: string;
   id: string | number;
+}
+
+export interface IMessage extends IUser {
+  id?: string | number;
+  date: string;
+  content: string;
 }
