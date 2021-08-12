@@ -13,3 +13,5 @@ export { default as LeftNavbar } from "./LeftNavbar";
 export { default as RightNavbar } from "./RightNavbar";
 export { default as NotificationBox } from "./NotificationBox";
 export { default as Message } from "./Message";
+export { default as MainTweets } from "./MainTweets";
+export { default as Tweet } from "./Tweet";

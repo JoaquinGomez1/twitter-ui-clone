@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+.circular {
+  @apply absolute z-0 w-full h-full bg-green-300;
+}

@@ -12,6 +12,11 @@ module.exports = {
       ...defaultTheme.screens,
     },
     fontSize: { md: "0.950rem", ...defaultTheme.fontSize },
+    minHeight: {
+      96: "24rem",
+      110: "28rem",
+      ...defaultTheme.minHeight,
+    },
   },
   variants: {
     extend: {},

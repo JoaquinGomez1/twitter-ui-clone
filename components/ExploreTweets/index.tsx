@@ -1,6 +1,7 @@
 import news from "../../constants/news";
 import { ITrending } from "../../constants/types";
 import TrendingBar from "../TrendingBar";
+import Image from "next/image";
 
 interface IExploreTweetsProps {
   image: string;
@@ -26,7 +27,11 @@ export default function index({
             {headerTitle || "Some serious and important news"}
           </h1>
         </div>
-        <img className="h-full w-full " src={image || defaultImage} alt="" />
+        <img
+          className="w-full h-72 min-h-full "
+          src={image || defaultImage}
+          alt=""
+        />
       </div>
 
       <div className="h-2 w-full bg-gray-700 bg-opacity-60 border border-gray-100 border-opacity-20" />

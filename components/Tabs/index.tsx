@@ -1,7 +1,7 @@
 import React, { ReactChildren, useState } from "react";
 
 interface ITabsProps {
-  children: ReactChildren;
+  children: JSX.Element | JSX.Element[];
   className?: string;
 }
 
@@ -26,7 +26,7 @@ export default function index(props: ITabsProps) {
               <h3
                 key={each?.props.name + index}
                 className={
-                  "py-2 px-3 text-sm w-full hover:bg-green-600 cursor-pointer text-center block hover:bg-opacity-10 text-gray-200 hover:text-green-400 " +
+                  "py-2 px-3 text-sm flex-grow hover:bg-green-600 cursor-pointer text-center block hover:bg-opacity-10 text-gray-200 hover:text-green-400 " +
                   (current === index &&
                     " text-green-400 border-b-2 font-bold border-green-400")
                 }
