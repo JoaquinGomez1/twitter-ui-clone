@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
-import { TweetsContext } from "../../context/tweets";
+import { TweetsContext, useTweets } from "../../context/tweets";
 import defaultImages from "../../constants/defaultImages";
 
 export default function index() {
-  const { setTweets, tweets } = useContext(TweetsContext);
+  const { setTweets, tweets } = useTweets();
   const [inputValue, setInputValue] = useState("");
   const maxCharacters = 120;
 
