@@ -46,31 +46,8 @@ export default function notifications() {
         icon={faCog}
         iconClassNames="text-green-500 h-4 w-4"
       />
-      {dummyTestData.map(({ actionName, content, authors }, i) => (
-        <NotificationBox
-          key={content + i}
-          {...{ authors, content, actionName }}
-        />
-      ))}
-      {dummyTestData.map(({ actionName, content, authors }, i) => (
-        <NotificationBox
-          key={content + i}
-          {...{ authors, content, actionName }}
-        />
-      ))}
-      {dummyTestData.map(({ actionName, content, authors }, i) => (
-        <NotificationBox
-          key={content + i}
-          {...{ authors, content, actionName }}
-        />
-      ))}
-      {dummyTestData.map(({ actionName, content, authors }, i) => (
-        <NotificationBox
-          key={content + i}
-          {...{ authors, content, actionName }}
-        />
-      ))}
-      {dummyTestData.map(({ actionName, content, authors }, i) => (
+
+      {dummyTestData.map(({ actionName, content, authors }: any, i) => (
         <NotificationBox
           key={content + i}
           {...{ authors, content, actionName }}

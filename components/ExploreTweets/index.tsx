@@ -1,12 +1,12 @@
 import news from "../../constants/news";
 import { ITrending } from "../../constants/types";
 import TrendingBar from "../TrendingBar";
-import Image from "next/image";
+import TabItem from "../../interfaces/tabItem";
 
-interface IExploreTweetsProps {
-  image: string;
-  trendings: ITrending[];
-  headerTitle: string;
+interface IExploreTweetsProps extends TabItem {
+  image?: string;
+  trendings?: ITrending[];
+  headerTitle?: string;
 }
 
 const defaultImage =

@@ -7,8 +7,9 @@ import PageViewContainer from "../components/PageViewContainer";
 import TweetsContext from "../context/tweets";
 
 import "../styles/index.css";
+import type { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>

@@ -1,7 +1,6 @@
-import { ReactChildren } from "react";
+import { PropsWithChildren, ReactChildren } from "react";
 
-interface IContainerProps {
-  children: ReactChildren;
+interface IContainerProps{
   className?: string;
 }
 
@@ -9,7 +8,7 @@ export default function Container({
   children,
   className,
   ...rest
-}: IContainerProps) {
+}: PropsWithChildren<IContainerProps>) {
   return (
     <div
       className={

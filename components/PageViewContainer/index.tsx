@@ -1,10 +1,10 @@
-import { ReactChildren } from "react";
+import { PropsWithChildren } from "react";
 
-interface IPageViewContainerProps {
-  children: ReactChildren;
-}
+interface IPageViewContainerProps {}
 
-export default function index(props: IPageViewContainerProps) {
+export default function index(
+  props: PropsWithChildren<IPageViewContainerProps>
+) {
   return (
     <div
       className="flex flex-grow flex-col px-1 md:max-w-xl overflow-hidden"

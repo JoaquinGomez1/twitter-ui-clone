@@ -1,7 +1,7 @@
-import { links } from "../constants";
+import { links } from "../../constants";
 import { useRouter } from "next/router";
-import CustomLink from "./CustomLink";
-import TwitterSvg from "./TwitterSvg";
+import CustomLink from "../CustomLink";
+import TwitterSvg from "../TwitterSvg";
 
 export default function LeftNavbar() {
   const router = useRouter();
