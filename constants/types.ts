@@ -9,7 +9,7 @@ export interface ITweet extends IUser {
   retweets: number;
   images?: IAvatar | undefined;
   avatar?: string;
-  originalContent?: boolean;
+  originalContent?: true;
 }
 
 export interface IAvatar {

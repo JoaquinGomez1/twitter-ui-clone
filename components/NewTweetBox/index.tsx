@@ -1,5 +1,7 @@
+
 import { useState } from "react";
 import { useTweets } from "../../context/tweets";
+
 import defaultImages from "../../constants/defaultImages";
 
 export default function index() {
