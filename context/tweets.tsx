@@ -9,7 +9,7 @@ import {
 import { ITweet } from "../constants/types";
 interface useTweetsState {
   tweets: ITweet[];
-  setTweets: Dispatch<SetStateAction<never[]>>;
+  setTweets: Dispatch<SetStateAction<ITweet[]>>;
   tweetsLoading: boolean;
   setTweetsLoading: Dispatch<SetStateAction<boolean>>;
 }
