@@ -1,4 +1,4 @@
-import React, { ReactChildren, useState } from "react";
+import React, { useState } from "react";
 
 interface ITabsProps {
   children: JSX.Element | JSX.Element[];
@@ -10,7 +10,6 @@ export default function index(props: ITabsProps) {
     React.isValidElement(child) ? React.cloneElement(child) : undefined
   );
   const [current, setCurrent] = useState(0);
-  const [tabs] = useState(childrenTabs);
 
   return (
     <div>
@@ -20,7 +19,7 @@ export default function index(props: ITabsProps) {
           "flex items-center overflow-x-auto w-full " + props.className
         }
       >
-        {tabs.map(
+        {childrenTabs.map(
           (each, index) =>
             each && (
               <h3
@@ -37,7 +36,7 @@ export default function index(props: ITabsProps) {
             )
         )}
       </div>
-      <div>{tabs[current] || "Please add children"}</div>
+      <div>{childrenTabs[current] || "Please add children"}</div>2{" "}
     </div>
   );
 }

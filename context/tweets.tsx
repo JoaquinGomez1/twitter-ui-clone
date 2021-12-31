@@ -5,39 +5,57 @@ import {
   useContext,
   Dispatch,
   SetStateAction,
+  PropsWithChildren,
+  useMemo,
 } from "react";
 import { ITweet } from "../constants/types";
+import useFetch from "../hooks/useFetch";
+import ApiResponseData from "../interfaces/apiResponse";
+import TweetFunctions from "../interfaces/tweetFunctions";
+import formatAsTweet from "../libs/formatAsTweet";
+
 interface useTweetsState {
   tweets: ITweet[];
-  setTweets: Dispatch<SetStateAction<ITweet[]>>;
+  setTweets?: Dispatch<SetStateAction<ITweet[]>>;
   tweetsLoading: boolean;
-  setTweetsLoading: Dispatch<SetStateAction<boolean>>;
+  setTweetsLoading?: Dispatch<SetStateAction<boolean>>;
+  tweetsFunctions: TweetFunctions;
+}
+
+interface useTweetsProps {
+  maxAmmount?: number;
 }
 
 export const TweetsContext = createContext<useTweetsState>(undefined!);
 
-export default function TweetsProvider(props: any) {
-  const [tweets, setTweets] = useState([]);
-  const [tweetsLoading, setTweetsLoading] = useState(false);
-
-  const handleFetch = async () => {
-    setTweetsLoading(true);
-    const maxResults = 12;
-    const URL = `https://randomuser.me/api/?results=${maxResults}`;
-    const req = await fetch(URL);
-    const res = await req.json();
-
-    setTweets(res.results);
-    setTweetsLoading(false);
-  };
+export default function TweetsProvider(
+  props: PropsWithChildren<useTweetsProps>
+) {
+  const maxResults = props.maxAmmount || 12;
+  const URL = `https://randomuser.me/api/?results=${maxResults}`;
+  const [tweets, setTweets] = useState<ITweet[]>([]);
+  const { data, isLoading: tweetsLoading } = useFetch<ApiResponseData>(URL);
 
   useEffect(() => {
-    handleFetch();
-  }, []);
+    if (!data) return;
+
+    const formatedTweets: ITweet[] =
+      data?.results?.map((item) => formatAsTweet(item)) || [];
+    setTweets(formatedTweets);
+  }, [data]);
+
+  const tweetsFunctions = useMemo(
+    () => ({
+      addTweet: (tweet: ITweet) => {
+        setTweets([tweet, ...tweets]);
+      },
+    }),
+    [tweets]
+  );
 
   return (
     <TweetsContext.Provider
-      value={{ tweets, setTweets, tweetsLoading, setTweetsLoading }}
+      value={{ tweets, tweetsLoading, tweetsFunctions }}
       {...props}
     />
   );

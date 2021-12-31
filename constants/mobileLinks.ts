@@ -3,15 +3,11 @@ import {
   faHouseUser,
   faBell,
   faEnvelope,
-  faBookmark,
-  faList,
-  faUser,
-  faEllipsisH,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { ILink } from "./types";
 
-const links: ILink[] = [
+const mobileLinks: ILink[] = [
   {
     text: "Home",
     id: "Home",
@@ -40,34 +36,6 @@ const links: ILink[] = [
     active_icon: faEnvelope,
     url: "/messages",
   },
-  {
-    text: "Bookmarks",
-    id: "Bookmarks",
-    default_icon: faBookmark,
-    active_icon: faBookmark,
-    url: "/bookmarks",
-  },
-  {
-    text: "Lists",
-    id: "Lists",
-    default_icon: faList,
-    active_icon: faList,
-    url: "/lists",
-  },
-  {
-    text: "Profile",
-    id: "Profile",
-    default_icon: faUser,
-    active_icon: faUser,
-    url: "/profile",
-  },
-  {
-    text: "More",
-    id: "More",
-    default_icon: faEllipsisH,
-    active_icon: faEllipsisH,
-    url: "/more",
-  },
 ];
 
-export default links;
+export default mobileLinks;

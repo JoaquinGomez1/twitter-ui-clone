@@ -8,6 +8,8 @@ import TweetsContext from "../context/tweets";
 
 import "../styles/index.css";
 import type { AppProps } from "next/app";
+import { BottomNavBar, Drawer, DrawerContent } from "../components";
+import UiProvider from "../context/ui";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,15 +19,21 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TweetsContext>
-        <div className="w-full bg-gray-800 relative min-h-screen text-white">
-          <Container>
-            <LeftNavbar />
-            <PageViewContainer>
-              <Component {...pageProps} />
-            </PageViewContainer>
-            <RightNavbar />
-          </Container>
-        </div>
+        <UiProvider>
+          <div className="w-full bg-gray-800 relative min-h-screen text-white">
+            <Container>
+              <Drawer>
+                <DrawerContent />
+              </Drawer>
+              <LeftNavbar />
+              <PageViewContainer>
+                <Component {...pageProps} />
+              </PageViewContainer>
+              <RightNavbar />
+              <BottomNavBar />
+            </Container>
+          </div>
+        </UiProvider>
       </TweetsContext>
     </>
   );

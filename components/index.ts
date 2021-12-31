@@ -15,3 +15,6 @@ export { default as NotificationBox } from "./NotificationBox";
 export { default as Message } from "./Message";
 export { default as MainTweets } from "./MainTweets";
 export { default as Tweet } from "./Tweet";
+export { default as BottomNavBar } from "./BottomNavBar";
+export { default as Drawer } from "./Drawer";
+export { default as DrawerContent } from "./DrawerContent";

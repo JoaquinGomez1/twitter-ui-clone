@@ -21,7 +21,7 @@ export default function CustomLink({ link, isActive }: ICustomLinkProps) {
         >
           <div>
             <FontAwesomeIcon
-              className="object-fit w-6 h-6"
+              className="object-fit w-6 h-6 align-bottom text-center"
               icon={isActive ? link.active_icon : link.default_icon}
             />
           </div>

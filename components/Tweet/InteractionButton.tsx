@@ -7,6 +7,7 @@ interface InteractionButtonProps {
   iconClassName?: string;
   containerClassName?: string;
   textClassName?: string;
+  onClick?: (param: any) => void;
 }
 
 export default function InteractionButton({

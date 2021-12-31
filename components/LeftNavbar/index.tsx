@@ -10,7 +10,7 @@ export default function LeftNavbar() {
   return (
     <div>
       {/* ↑ This div is necessary for the position sticky to work  */}
-      <div className="flex flex-col lg:w-48 text-gray-200 py-2 z-50 sticky top-1 space-y-1 ">
+      <div className="hidden sm:flex flex-col lg:w-48 text-gray-200 py-2 z-50 sticky top-1 space-y-1 ">
         <TwitterSvg />
         {links.map((link) => {
           const isActive = currentLink === link.url;
