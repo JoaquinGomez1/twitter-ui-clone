@@ -5,6 +5,7 @@ import formatAsTweet from "../libs/formatAsTweet";
 import LoadingSpinner from "./LoadingSpinner";
 import { faMeteor } from "@fortawesome/free-solid-svg-icons";
 import { ITweet } from "../constants/types";
+import { TweetSkeleton } from ".";
 
 interface MainTweetsProps {
   tweets: ITweet[];
@@ -13,7 +14,7 @@ interface MainTweetsProps {
 }
 
 export default function MainTweets({ tweets, loading }: MainTweetsProps) {
-  if (!tweets.length && loading) return <LoadingSpinner />;
+  const initialArray = Array.from(Array(8).keys()); // Contains an array of numbers from 1 to 10
 
   return (
     <div className="relative">
@@ -22,9 +23,11 @@ export default function MainTweets({ tweets, loading }: MainTweetsProps) {
         <NewTweetBox />
       </div>
       <div className="w-full transition-all ease-in-out">
-        {tweets?.map((tweet: any) => {
-          return <Tweet key={tweet.author_id} tweet={tweet} />;
-        })}
+        {loading
+          ? initialArray.map((value) => <TweetSkeleton key={value} />)
+          : tweets?.map((tweet: any) => {
+              return <Tweet key={tweet.author_id} tweet={tweet} />;
+            })}
       </div>
     </div>
   );

@@ -10,14 +10,16 @@ import { Avatar, Button, Tabs, Tweet, LoadingSpinner } from "../components";
 import Link from "next/link";
 import { useTweets } from "../context/tweets";
 import { ITweet } from "../constants/types";
+import { useRouter } from "next/router";
 
 export default function profile() {
   const { tweets, tweetsLoading } = useTweets();
+  const router = useRouter();
 
   return (
     <div>
       <div className="flex h-12 justify-start border-l border-r border-gray-700">
-        <div className="flex justify-center items-center px-5 w-20">
+        <div className="flex justify-center items-center px-5 w-20" onClick={router.back}>
           <FontAwesomeIcon
             icon={faArrowLeft}
             className="text-green-400 w-4"
