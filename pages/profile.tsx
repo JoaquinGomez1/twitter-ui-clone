@@ -6,24 +6,20 @@ import {
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import defaultImages from "../constants/defaultImages";
-import { Avatar, Button, Tabs, MainTweets, Tweet } from "../components";
+import { Avatar, Button, Tabs, Tweet, LoadingSpinner } from "../components";
 import Link from "next/link";
 import { useTweets } from "../context/tweets";
-import formatAsTweet from "../libs/formatAsTweet";
-import { useEffect, useState } from "react";
+import { ITweet } from "../constants/types";
+import { useRouter } from "next/router";
 
 export default function profile() {
-  const { tweets } = useTweets();
-  const [localTweets, setLocalTweets] = useState(tweets);
-
-  useEffect(() => {
-    setLocalTweets(tweets);
-  }, [tweets]);
+  const { tweets, tweetsLoading } = useTweets();
+  const router = useRouter();
 
   return (
     <div>
       <div className="flex h-12 justify-start border-l border-r border-gray-700">
-        <div className="flex justify-center items-center px-5 w-20">
+        <div className="flex justify-center items-center px-5 w-20" onClick={router.back}>
           <FontAwesomeIcon
             icon={faArrowLeft}
             className="text-green-400 w-4"
@@ -85,10 +81,26 @@ export default function profile() {
         </div>
         <div className="min-h-screen">
           <Tabs>
-            <TweetList name="Tweets" tweets={localTweets} />
-            <TweetList name="Tweets and Replies" tweets={localTweets} />
-            <TweetList name="Media" tweets={tweets} />
-            <TweetList name="Likes" tweets={tweets} />
+            <TweetList
+              name="Tweets"
+              tweets={tweets}
+              tweetsLoading={tweetsLoading}
+            />
+            <TweetList
+              name="Tweets and Replies"
+              tweets={tweets}
+              tweetsLoading={tweetsLoading}
+            />
+            <TweetList
+              name="Media"
+              tweets={tweets}
+              tweetsLoading={tweetsLoading}
+            />
+            <TweetList
+              name="Likes"
+              tweets={tweets}
+              tweetsLoading={tweetsLoading}
+            />
           </Tabs>
         </div>
       </div>
@@ -122,15 +134,16 @@ function ProfileBadge({ className, icon, children }: any) {
   );
 }
 
-function TweetList({ tweets }: any) {
+function TweetList({ tweets, tweetsLoading }: any) {
   return (
     <div className="w-full">
-      {tweets?.map((tweet: any) => {
-        const formatedTweet = tweet.originalContent
-          ? tweet
-          : formatAsTweet(tweet);
-        return <Tweet key={formatedTweet.author_id} tweet={formatedTweet} />;
-      })}
+      {tweetsLoading ? (
+        <LoadingSpinner />
+      ) : (
+        tweets.map((tweet: ITweet) => (
+          <Tweet key={tweet.author_id} tweet={tweet} />
+        ))
+      )}
     </div>
   );
 }

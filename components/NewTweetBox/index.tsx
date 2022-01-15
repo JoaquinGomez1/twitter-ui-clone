@@ -1,11 +1,28 @@
-
 import { useState } from "react";
 import { useTweets } from "../../context/tweets";
 
 import defaultImages from "../../constants/defaultImages";
+import { ITweet } from "../../constants/types";
+
+const makeNewTweetData = (data: string): ITweet => ({
+  author_id: `${Math.random()}`,
+  images: {
+    large: defaultImages.large,
+    thumbnail: defaultImages.thumbnail,
+  },
+  author_tag: "ThisUser",
+  author_name: `This_Awesome_user`,
+  comments: 0,
+  likes: 0,
+  retweets: 0,
+  content: data,
+  originalContent: true,
+});
 
 export default function index() {
-  const { setTweets, tweets } = useTweets();
+  const {
+    tweetsFunctions: { addTweet },
+  } = useTweets();
   const [inputValue, setInputValue] = useState("");
   const maxCharacters = 120;
 
@@ -14,24 +31,9 @@ export default function index() {
   };
 
   const handleNewTweet = () => {
-    setTweets([
-      {
-        author_id: `${Math.random()}`,
-        images: {
-          large: defaultImages.large,
-          thumbnail: defaultImages.thumbnail,
-        },
-        author_tag: "ThisUser",
-        author_name: `This_Awesome_user`,
-        comments: 0,
-        likes: 0,
-        retweets: 0,
-        content: inputValue,
-        originalContent: true,
-      },
-      ...tweets,
-    ]);
+    addTweet(makeNewTweetData(inputValue));
   };
+
   return (
     <div className="flex p-4 py-3 border-l border-r border-b border-opacity-20 border-gray-100">
       <div>
