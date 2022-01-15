@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import { useTweets } from "../../context/tweets";
 
 import defaultImages from "../../constants/defaultImages";
+import { ITweet } from "../../constants/types";
 
-const makeNewTweetData = (data: string) => ({
+const makeNewTweetData = (data: string): ITweet => ({
   author_id: `${Math.random()}`,
   images: {
     large: defaultImages.large,
