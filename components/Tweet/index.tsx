@@ -4,11 +4,11 @@ import {
   faCommentAlt,
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
-import { ITweet } from "../../constants/types";
 import InteractionButton from "./InteractionButton";
 import Avatar from "../Avatar";
 import { useEffect, useRef } from "react";
 import { Transition } from "@tailwindui/react";
+import { ITweet } from "../../interfaces/tweets";
 
 interface TweetActions {
   comments: number;

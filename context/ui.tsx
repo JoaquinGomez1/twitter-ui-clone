@@ -9,6 +9,7 @@ interface UiState {
 
 interface UiFunctions {
   toggleDrawer: () => void;
+  closeDrawer: () => void;
 }
 
 export const UiContext = createContext<UiState>(undefined!);
@@ -16,9 +17,13 @@ export const UiContext = createContext<UiState>(undefined!);
 export default function UiProvider(props: PropsWithoutRef<UiProps>) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
+  /**This is to encapsulate all the drawer's behavior in a single place */
   const uiFunctions: UiFunctions = {
     toggleDrawer: () => {
       setIsDrawerOpen(!isDrawerOpen);
+    },
+    closeDrawer: () => {
+      setIsDrawerOpen(false);
     },
   };
 

@@ -1,7 +1,7 @@
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { Message, SearchBar, TweetBoxHeader } from "../components";
-import { IMessage } from "../constants/types";
+import { IMessage } from "../interfaces/message";
 import formatAsMessage from "../libs/formatAsMessage";
 
 export default function messages() {
@@ -9,15 +9,13 @@ export default function messages() {
 
   const fetchData = async () => {
     const maxResults = 15;
-    const result: IMessage[] = [];
 
     const url = `https://randomuser.me/api/?results=${maxResults}`;
     const req = await fetch(url);
     const res: any = await req.json();
 
-    res.results.forEach((each: any) => {
-      result.push(formatAsMessage(each));
-    });
+    // Format result
+    const result: IMessage[] = res.map((each: any) => formatAsMessage(each));
 
     setMessagesObjs(result);
   };
@@ -38,10 +36,9 @@ export default function messages() {
       </div>
 
       <div className="border-l border-r border-gray-600">
-        {messagesObjs &&
-          messagesObjs.map((message) => (
-            <Message key={message.id} {...{ message }} />
-          ))}
+        {messagesObjs?.map((message) => (
+          <Message key={message.id} {...{ message }} />
+        ))}
       </div>
     </div>
   );

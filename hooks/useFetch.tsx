@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 
 export default function useFetch<T>(url: string, options: RequestInit = {}) {
   const [data, setData] = useState<T>();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const mounted = useRef(true);
 

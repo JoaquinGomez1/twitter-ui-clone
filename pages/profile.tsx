@@ -9,8 +9,10 @@ import defaultImages from "../constants/defaultImages";
 import { Avatar, Button, Tabs, Tweet, LoadingSpinner } from "../components";
 import Link from "next/link";
 import { useTweets } from "../context/tweets";
-import { ITweet } from "../constants/types";
 import { useRouter } from "next/router";
+import { ITweet } from "../interfaces/tweets";
+import BackgroundAvatar from "../components/BackgroundAvatar";
+import ProfileBadge from "../components/ProfileBadgex";
 
 export default function profile() {
   const { tweets, tweetsLoading } = useTweets();
@@ -19,7 +21,10 @@ export default function profile() {
   return (
     <div>
       <div className="flex h-12 justify-start border-l border-r border-gray-700">
-        <div className="flex justify-center items-center px-5 w-20" onClick={router.back}>
+        <div
+          className="flex justify-center items-center px-5 w-20 cursor-pointer"
+          onClick={router.back}
+        >
           <FontAwesomeIcon
             icon={faArrowLeft}
             className="text-green-400 w-4"
@@ -79,6 +84,7 @@ export default function profile() {
             </p>
           </div>
         </div>
+
         <div className="min-h-screen">
           <Tabs>
             <TweetList
@@ -104,32 +110,6 @@ export default function profile() {
           </Tabs>
         </div>
       </div>
-    </div>
-  );
-}
-
-function BackgroundAvatar({ className, backgroundImage }: any) {
-  return (
-    <div
-      className={"circular " + (className || "")}
-      style={{
-        backgroundImage: backgroundImage || defaultImages.profileBackground,
-      }}
-    ></div>
-  );
-}
-
-function ProfileBadge({ className, icon, children }: any) {
-  return (
-    <div
-      className={
-        "text-gray-400  flex space-x-2 items-center text-sm " +
-        (className || "")
-      }
-    >
-      <FontAwesomeIcon className="w-4 h-4" size="sm" icon={icon} />
-
-      {children}
     </div>
   );
 }

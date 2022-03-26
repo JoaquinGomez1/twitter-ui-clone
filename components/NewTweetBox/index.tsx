@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTweets } from "../../context/tweets";
 
 import defaultImages from "../../constants/defaultImages";
-import { ITweet } from "../../constants/types";
+import { ITweet } from "../../interfaces/tweets";
 
 const makeNewTweetData = (data: string): ITweet => ({
   author_id: `${Math.random()}`,

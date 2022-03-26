@@ -1,4 +1,4 @@
-import { IMessage } from "../constants/types";
+import { IMessage } from "../interfaces/message";
 
 export default function formatAsMessage(object: any): IMessage {
   return {

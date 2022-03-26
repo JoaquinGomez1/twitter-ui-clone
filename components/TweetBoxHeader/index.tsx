@@ -22,7 +22,7 @@ export default function index({
   return (
     <div className="text-white sticky top-0 bg-gray-800 font-bold flex justify-between items-center border-l border-b border-r px-4 border-solid border-opacity-20 border-gray-100 py-2">
       <div className="flex space-x-6 sm:space-x-0 items-center">
-        <div onClick={toggleDrawer}>
+        <div className="cursor-pointer" onClick={toggleDrawer}>
           <Avatar
             containerClassName="sm:hidden"
             src={defaultImages.thumbnail}

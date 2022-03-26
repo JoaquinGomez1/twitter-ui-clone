@@ -1,11 +1,9 @@
 import NewTweetBox from "./NewTweetBox";
 import TweetBoxHeader from "./TweetBoxHeader";
 import Tweet from "./Tweet";
-import formatAsTweet from "../libs/formatAsTweet";
-import LoadingSpinner from "./LoadingSpinner";
 import { faMeteor } from "@fortawesome/free-solid-svg-icons";
-import { ITweet } from "../constants/types";
 import { TweetSkeleton } from ".";
+import { ITweet } from "../interfaces/tweets";
 
 interface MainTweetsProps {
   tweets: ITweet[];
