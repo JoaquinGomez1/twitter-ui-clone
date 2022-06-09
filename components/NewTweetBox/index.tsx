@@ -1,10 +1,12 @@
-import { useState } from "react";
 import { useTweets } from "../../context/tweets";
 
 import defaultImages from "../../constants/defaultImages";
 import { ITweet } from "../../interfaces/tweets";
+import useFormInput from "../../hooks/useFocus";
+import Link from "next/link";
 
 const makeNewTweetData = (data: string): ITweet => ({
+  id: `${Math.random()}`,
   author_id: `${Math.random()}`,
   images: {
     large: defaultImages.large,
@@ -18,31 +20,39 @@ const makeNewTweetData = (data: string): ITweet => ({
   content: data,
   originalContent: true,
 });
-
 export default function index() {
-  const {
-    tweetsFunctions: { addTweet },
-  } = useTweets();
-  const [inputValue, setInputValue] = useState("");
   const maxCharacters = 120;
+  const { tweetsFunctions } = useTweets();
+
+  const handleSubmit = () => {
+    setInputValue("");
+    tweetsFunctions.addTweet(makeNewTweetData(inputValue));
+  };
+  const handleNewTweet = (e: KeyboardEvent) => {
+    if (e.key === "\n") {
+      handleSubmit();
+    }
+  };
+  const [inputValue, setInputValue, ref] = useFormInput(handleNewTweet);
 
   const handleChange = ({ target }: any) => {
     setInputValue(target.value.substring(0, maxCharacters));
-  };
-
-  const handleNewTweet = () => {
-    addTweet(makeNewTweetData(inputValue));
   };
 
   return (
     <div className="flex p-4 py-3 border-l border-r border-b border-opacity-20 border-gray-100">
       <div>
         <div className="h-11 w-11 object-fit overflow-hidden rounded-full bg-white">
-          <img src={defaultImages.thumbnail} alt=""></img>
+          <Link href="/profile">
+            <a href="">
+              <img src={defaultImages.thumbnail} alt="Your avatar"></img>
+            </a>
+          </Link>
         </div>
       </div>
       <div className="flex-grow">
         <textarea
+          ref={ref}
           onChange={handleChange}
           value={inputValue}
           placeholder="What's happening"
@@ -61,7 +71,7 @@ export default function index() {
         <div className="flex justify-between mt-2">
           <div className="flex-grow"></div>
           <button
-            onClick={handleNewTweet}
+            onClick={handleSubmit}
             className="px-4 py-2 bg-green-400 hover:bg-green-500 rounded-full text-white font-bold text-sm focus:outline-none"
           >
             Tweet

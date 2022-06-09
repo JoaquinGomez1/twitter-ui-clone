@@ -1,11 +1,13 @@
 // Returns a 'tweet' like object
 
-import { ITweet } from "../constants/types";
 import { ApiResult } from "../interfaces/apiResponse";
+import { ITweet } from "../interfaces/tweets";
 
 export default function formatAsTweet(object: ApiResult): ITweet {
+  console.log({ object });
   return {
-    author_id: `${object?.id?.value}${Math.random()}`,
+    id: `${(Math.random() * 1000000).toFixed(0)}`,
+    author_id: `${object?.id?.value}`,
     images: {
       large: object?.picture?.large,
       thumbnail: object?.picture?.thumbnail,

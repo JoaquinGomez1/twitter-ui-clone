@@ -40,9 +40,10 @@ const makeTweetActions = ({ comments, retweets, likes }: TweetActions) => [
 
 interface ITweetProps {
   tweet: ITweet;
+  className?: string;
 }
 
-export default function index(tweet: ITweetProps) {
+export default function index(props: ITweetProps) {
   const {
     author_name,
     author_tag,
@@ -52,7 +53,8 @@ export default function index(tweet: ITweetProps) {
     comments,
     retweets,
     images,
-  } = tweet.tweet;
+  } = props.tweet;
+  const { className } = props;
   const mounted = useRef(true);
   const tweetActions = makeTweetActions({
     comments,
@@ -75,7 +77,9 @@ export default function index(tweet: ITweetProps) {
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-      <div className="flex px-4 py-2 border border-gray-100 border-opacity-20">
+      <div
+        className={`flex px-4 py-2 border border-gray-100 border-opacity-20 ${className}`}
+      >
         <Avatar src={images?.large! || images?.thumbnail!} />
         <div className="flex flex-col px-4 w-full">
           <div className="flex items-center">

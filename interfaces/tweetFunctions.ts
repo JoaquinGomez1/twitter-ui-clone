@@ -1,4 +1,4 @@
-import { ITweet } from "../constants/types";
+import { ITweet } from "./tweets";
 
 export default interface TweetFunctions {
   addTweet: (tweet: ITweet) => void;

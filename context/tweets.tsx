@@ -8,10 +8,10 @@ import {
   PropsWithChildren,
   useMemo,
 } from "react";
-import { ITweet } from "../constants/types";
 import useFetch from "../hooks/useFetch";
 import ApiResponseData from "../interfaces/apiResponse";
 import TweetFunctions from "../interfaces/tweetFunctions";
+import { ITweet } from "../interfaces/tweets";
 import formatAsTweet from "../libs/formatAsTweet";
 
 interface useTweetsState {

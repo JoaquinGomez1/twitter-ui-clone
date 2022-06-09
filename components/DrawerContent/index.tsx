@@ -71,7 +71,7 @@ export default function index() {
 
       <div className="space-y-2">
         {drawerLinks.map(({ content, icon, href }) => (
-          <Link href={href}>
+          <Link key={href} href={href}>
             <a
               onClick={closeDrawer}
               className="flex space-x-4 p-2 items-center hover:bg-gray-700"

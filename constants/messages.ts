@@ -1,4 +1,4 @@
-import { IMessage } from "./types";
+import { IMessage } from "../interfaces/message";
 
 const messages: IMessage[] = [
   {

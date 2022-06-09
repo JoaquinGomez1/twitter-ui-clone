@@ -4,6 +4,7 @@ import Tweet from "./Tweet";
 import { faMeteor } from "@fortawesome/free-solid-svg-icons";
 import { TweetSkeleton } from ".";
 import { ITweet } from "../interfaces/tweets";
+import Link from "next/link";
 
 interface MainTweetsProps {
   tweets: ITweet[];
@@ -23,8 +24,14 @@ export default function MainTweets({ tweets, loading }: MainTweetsProps) {
       <div className="w-full transition-all ease-in-out">
         {loading
           ? initialArray.map((value) => <TweetSkeleton key={value} />)
-          : tweets?.map((tweet: any) => {
-              return <Tweet key={tweet.author_id} tweet={tweet} />;
+          : tweets?.map((tweet: ITweet) => {
+              return (
+                <Tweet
+                  className="cursor-pointer hover:bg-gray-700"
+                  key={tweet.id}
+                  tweet={tweet}
+                />
+              );
             })}
       </div>
     </div>

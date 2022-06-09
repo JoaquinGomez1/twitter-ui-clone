@@ -6,6 +6,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 interface ISearchBarProps {
   placeholder?: string;
   icon?: IconProp;
+  onValueChange?: (val: string) => void;
 }
 
 export default function index(props: ISearchBarProps) {
@@ -22,6 +23,7 @@ export default function index(props: ISearchBarProps) {
         type="text"
         className="bg-transparent ml-4 text-gray-400 w-full text-sm"
         placeholder={props.placeholder}
+        onChange={props.onValueChange}
       />
     </div>
   );

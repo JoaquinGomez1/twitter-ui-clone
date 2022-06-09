@@ -2,6 +2,7 @@ import { IAvatar } from "./avatar";
 import { IUser } from "./user";
 
 export interface ITweet extends IUser {
+  id: string;
   author_id?: string | number;
   content: string;
   date?: Date | string;
