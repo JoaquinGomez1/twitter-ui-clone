@@ -7,13 +7,13 @@ import { ITweet } from "../../interfaces/tweets";
 export default function TweetDetail() {
   const router = useRouter();
   const { id } = router.query;
-  const { data, isLoading } = useFetch<ITweet>(`/api/tweets/${id}`);
+  // const { data, isLoading } = useFetch<ITweet>(`/api/tweets/${id}`);
 
   return (
     <div className="relative">
       <TweetBoxHeader icon={faMeteor} content={`Tweet detail`} />
       <div className="bg-gray-800">
-        {isLoading && data ? <TweetSkeleton /> : <Tweet tweet={data!} />}
+        {/* {isLoading && data ? <TweetSkeleton /> : <Tweet tweet={data!} />} */}
       </div>
     </div>
   );

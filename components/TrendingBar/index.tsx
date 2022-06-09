@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-import { ITrending } from "../../constants/types";
+import { ITrending } from "../../interfaces/trending";
 
 interface ITrendingBarProps {
   className?: string;

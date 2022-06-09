@@ -1,4 +1,4 @@
-import { ITrending } from "./types";
+import { ITrending } from "../interfaces/trending";
 
 const news: ITrending[] = [
   {

@@ -9,7 +9,7 @@ import {
   faEllipsisH,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-import { ILink } from "./types";
+import { ILink } from "../interfaces/link";
 
 const links: ILink[] = [
   {

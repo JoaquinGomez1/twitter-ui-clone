@@ -1,7 +1,8 @@
-import { ITweet } from "./types";
+import { ITweet } from "../interfaces/tweets";
 
 const tweets: ITweet[] = [
   {
+    id: "1",
     author_name: "Juanceto",
     author_tag: "juan",
     content: "Hello this is just a placeholder tweet",
@@ -11,6 +12,7 @@ const tweets: ITweet[] = [
     avatar: undefined,
   },
   {
+    id: "82",
     author_name: "Luceta",
     author_tag: "Luz123",
     content: "Hello guys i love this",
@@ -20,6 +22,7 @@ const tweets: ITweet[] = [
     avatar: undefined,
   },
   {
+    id: "72",
     author_name: "Darkses",
     author_tag: "Kda32",
     content: "Hello this is just a placeholder tweet",
@@ -29,6 +32,7 @@ const tweets: ITweet[] = [
     avatar: undefined,
   },
   {
+    id: "265",
     author_name: "Kiko",
     author_tag: "Kekto",
     content: "Hello this is just a placeholder tweet",
@@ -38,6 +42,7 @@ const tweets: ITweet[] = [
     avatar: undefined,
   },
   {
+    id: "5462",
     author_name: "Kiko",
     author_tag: "Kekto",
     content: "Hello this is just a placeholder tweet",
@@ -47,6 +52,7 @@ const tweets: ITweet[] = [
     avatar: undefined,
   },
   {
+    id: "265",
     author_name: "Kiko",
     author_tag: "Kekto",
     content: "Hello this is just a placeholder tweet",
@@ -56,6 +62,7 @@ const tweets: ITweet[] = [
     avatar: undefined,
   },
   {
+    id: "5",
     author_name: "Kiko",
     author_tag: "Kekto",
     content: "Hello this is just a placeholder tweet",
@@ -65,6 +72,7 @@ const tweets: ITweet[] = [
     avatar: undefined,
   },
   {
+    id: "253",
     author_name: "Kiko",
     author_tag: "Kekto",
     content: "Hello this is just a placeholder tweet",
@@ -74,6 +82,7 @@ const tweets: ITweet[] = [
     avatar: undefined,
   },
   {
+    id: "22",
     author_name: "Kiko",
     author_tag: "Kekto",
     content: "Hello this is just a placeholder tweet",
@@ -83,6 +92,7 @@ const tweets: ITweet[] = [
     avatar: undefined,
   },
   {
+    id: "33",
     author_name: "Kiko",
     author_tag: "Kekto",
     content: "Hello this is just a placeholder tweet",

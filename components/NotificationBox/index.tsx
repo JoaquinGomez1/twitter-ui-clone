@@ -1,7 +1,7 @@
 import { faHeart, faRetweet } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import defaultImages from "../../constants/defaultImages";
-import { ITweet } from "../../constants/types";
+import { ITweet } from "../../interfaces/tweets";
 
 interface INotificationBoxProps {
   authors: ITweet[];

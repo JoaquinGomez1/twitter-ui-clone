@@ -1,7 +1,7 @@
 import news from "../../constants/news";
-import { ITrending } from "../../constants/types";
 import TrendingBar from "../TrendingBar";
 import TabItem from "../../interfaces/tabItem";
+import { ITrending } from "../../interfaces/trending";
 
 interface IExploreTweetsProps extends TabItem {
   image?: string;
