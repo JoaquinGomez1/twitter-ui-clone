@@ -25,13 +25,7 @@ export default function MainTweets({ tweets, loading }: MainTweetsProps) {
         {loading
           ? initialArray.map((value) => <TweetSkeleton key={value} />)
           : tweets?.map((tweet: ITweet) => {
-              return (
-                <Tweet
-                  className="cursor-pointer hover:bg-gray-700"
-                  key={tweet.id}
-                  tweet={tweet}
-                />
-              );
+              return <Tweet key={tweet.id} tweet={tweet} />;
             })}
       </div>
     </div>
